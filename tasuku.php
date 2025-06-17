@@ -7,6 +7,8 @@
 </head>
 <body>
     <h1>タスク編集</h1>
+    $pdo=connectDB();
+    <form action="create.php" method="post">
     内容:<input type="text" value="task"><br>
     期限:<input type="date" value="due_date"><br>
     優先度:
@@ -22,6 +24,8 @@
         <option value="done">完了</option>
     </select><br>
     <button type="submit">保存</button>
-    <a href="">キャンセル</a>
+    </form>
+    <a href="todos.php">キャンセル</a>
+    
 </body>
 </html>
