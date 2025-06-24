@@ -6,9 +6,10 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>TODOリスト</h1>
     <form action="header.php" name="task">
         <h2>タスク追加</h2>
-        <input type="text" name="content">
+        <input type="text" name="task">
         <input type="datetime" name="cale">
         <select name="priority">
             <?php
@@ -18,7 +19,7 @@
                 "高"
             ]
             ?>
-            <input type="button" name="tui" value="追加">
+            <input type="button" name="add" value="追加">
     </form>
     <h2>フィルタア/検索</h2>
     <form action="todo.php" name="search">
@@ -41,7 +42,7 @@
                 "高"
             ]
             ?>
-        <input type="button" name="add" value="適用">
+        <input type="button" name="search" value="適用">
     </form>
     
     <?php
@@ -64,9 +65,9 @@
         foreach ($prioritys as $priority) {
             echo '<tr>';
             echo '<td><input type="checkbox" name="agree"></td>';
-            echo '<td>', $priority['naiyou'], '</td>';
-            echo '<td>', $priority['kare'], '</td>';
-            echo '<td>', $priority['priority'], '</td>';
+            echo '<td>', $priority['task'], '</td>';
+            echo '<td>', $priority['status ENUM'], '</td>';
+            echo '<td>', $priority['priority TINYINT'], '</td>';
             echo '<td> <a href="header.php name="edit">編集</a> </td>';
             echo '<td> <a href="header.php" name="dele">削除</a> </td>';
             echo '</tr>';

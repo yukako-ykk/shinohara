@@ -1,18 +1,17 @@
 <?php
+if(isset($_POST['add'])){
+    $sql = $pdo->prepare('INSERT INTO users ( task, status ENUM, priority TINYINT) VALUES (?,?,?)');
+    $sql->execute([$_POST['task'], $_POST['cale'], $_POST['priority']]);
+    $pdo = null;
+}
 if (isset($_POST['edit'])) {
-        $user_id = $_POST['id'];
-        $name = $_POST['name'];
-        $price = $_POST['price'];
-       
-        $sql = $pdo->prepare('UPDATE users SET
-                                username = ?, password = ?, created_at = ?
-                                WHERE user_id = ?');
-        if (!($sql->execute([$name, $price, $stock, $option, $category, $explain, $made, $seller, $id]))) {
-            header('Location: admin_top.php');
-            exit;
-        }
-    header('Location: todo.php');
-    exit;
+    $sql = $pdo->prepare('UPDATE users SET
+                            task = ?, status ENUM = ?,priority TINYINT = ?
+                            WHERE user_id = ?');
+    if (!($sql->execute([$_POST['task'], $_POST['status ENUM'],$_POST['priority TINYINT']]))) {
+        header('Location: todo.php');
+        exit;
+    }
 }
 if (isset($_POST['dele'])) {
     $user_id = $_POST['id'];
