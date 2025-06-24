@@ -1,4 +1,6 @@
 <?php
+require_once 'connectDB.php';
+$pdo = connectDB();
 if(isset($_POST['add'])){
     $sql = $pdo->prepare('INSERT INTO users ( task, status ENUM, priority TINYINT) VALUES (?,?,?)');
     $sql->execute([$_POST['task'], $_POST['cale'], $_POST['priority']]);

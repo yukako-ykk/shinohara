@@ -6,6 +6,10 @@
     <title>Document</title>
 </head>
 <body>
+    <?php
+    require_once 'connectDB.php';
+    $pdo = connectDB();
+    ?>
     <h1>TODOリスト</h1>
     <form action="header.php" name="task">
         <h2>タスク追加</h2>
@@ -46,10 +50,8 @@
     </form>
     
     <?php
-    require_once 'function.php';
     if (isset($_POST['user_id'])) {
         $user_id = $_POST['user_id'];
-        $pdo = pdo();
         $sql = $pdo->prepare('SELECT * FROM users WHERE user_id = ?');
         $sql->execute([$user_id]);
         $product = $sql->fetch(PDO::FETCH_ASSOC);
