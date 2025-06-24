@@ -4,10 +4,9 @@ if (isset($_POST['edit'])) {
         $name = $_POST['name'];
         $price = $_POST['price'];
        
-        $sql = $pdo->prepare('UPDATE shohins SET
-                                shohin_name = ?, shohin_price = ?, shohin_stock = ?, shohin_option = ?,
-                                shohin_category = ?,shohin_explain = ?, shohin_made = ?, shohin_seller = ?
-                              WHERE shohin_id = ?');
+        $sql = $pdo->prepare('UPDATE users SET
+                                username = ?, password = ?, created_at = ?
+                                WHERE user_id = ?');
         if (!($sql->execute([$name, $price, $stock, $option, $category, $explain, $made, $seller, $id]))) {
             header('Location: admin_top.php');
             exit;
