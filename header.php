@@ -3,14 +3,14 @@ require_once 'connectDB.php';
 $pdo = connectDB();
 if(isset($_POST['add'])){
     $sql = $pdo->prepare('INSERT INTO users ( task, status ENUM, priority TINYINT) VALUES (?,?,?)');
-    $sql->execute([$_POST['task'], $_POST['cale'], $_POST['priority']]);
+    $sql->execute([$_POST['task'], $_POST['date'], $_POST['priority']]);
     $pdo = null;
 }
 if (isset($_POST['edit'])) {
     $sql = $pdo->prepare('UPDATE users SET
                             task = ?, status ENUM = ?,priority TINYINT = ?
                             WHERE user_id = ?');
-    if (!($sql->execute([$_POST['task'], $_POST['status ENUM'],$_POST['priority TINYINT']]))) {
+    if (!($sql->execute([$_POST['task'], $_POST['date'],$_POST['priority']]))) {
         header('Location: todo.php');
         exit;
     }

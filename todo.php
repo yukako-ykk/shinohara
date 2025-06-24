@@ -13,16 +13,13 @@
     <h1>TODOリスト</h1>
     <form action="header.php" name="task">
         <h2>タスク追加</h2>
-        <input type="text" name="task">
-        <input type="datetime" name="cale">
+        <input type="text" name="task" placeholder="タスク内容">
+        <input type="date" name="date">
         <select name="priority">
-            <?php
-            $prioritys = [
-                "優先度(低)",
-                "中",
-                "高"
-            ]
-            ?>
+        <option value="優先度(低)">優先度(低)</option>
+        <option value="中">中</option>
+        <option value="高">高</option>
+        </select>
             <input type="button" name="add" value="追加">
     </form>
     <h2>フィルタア/検索</h2>
