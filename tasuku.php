@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>タスク編集</h1>
-    $pdo=connectDB();
+    <?php $pdo=connectDB();?>
     <form action="create.php" method="post">
     内容:<input type="text" value="task"><br>
     期限:<input type="date" value="due_date"><br>
