@@ -16,7 +16,7 @@
         <input type="text" name="task" placeholder="タスク内容">
         <input type="date" name="date">
         <select name="priority">
-        <option value="優先度(低)">優先度(低)</option>
+        <option value="低">優先度(低)</option>
         <option value="中">中</option>
         <option value="高">高</option>
         </select>
@@ -27,8 +27,7 @@
   <input type="text" name="task" placeholder="タスク内容" required>
   <input type="date" name="date" required>
   <select name="priority" required>
-    <option value="">優先度を選択</option>
-    <option value="低">低</option>
+    <option value="低">優先度(低)</option>
     <option value="中">中</option>
     <option value="高">高</option>
   </select>
@@ -44,7 +43,7 @@
         <option value=""></option>
         </select>
         <select name="priority">
-        <option value="優先度(すべて)">優先度(すべて)</option>
+        <option value="すべて">優先度(すべて)</option>
         <option value="低">低</option>
         <option value="中">中</option>
         <option value="高">高</option>
