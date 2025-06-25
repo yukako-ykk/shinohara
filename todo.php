@@ -26,23 +26,16 @@
     <form action="todo.php" name="search">
         <input class="search_bar" type="text" name="keyword" placeholder="キーワード">
         <select name="filter">
-        <?php
-            $filter = [
-                "すべて",
-                "",
-                "",
-                ""
-            ]
-            ?>
+        <option value="すべて">すべて</option>
+        <option value=""></option>
+        <option value=""></option>
+        </select>
         <select name="priority">
-        <?php
-            $prioritys = [
-                "優先度(全)",
-                "低",
-                "中",
-                "高"
-            ]
-            ?>
+        <option value="優先度(すべて)">優先度(すべて)</option>
+        <option value="低">低</option>
+        <option value="中">中</option>
+        <option value="高">高</option>
+        </select>
         <input type="button" name="search" value="適用">
     </form>
     
